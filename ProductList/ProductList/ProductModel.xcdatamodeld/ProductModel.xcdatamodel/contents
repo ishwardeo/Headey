@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G5033" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category1" representedClassName=".Category1" syncable="YES" codeGenerationType="class">
+        <attribute name="child_categories" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product1"/>
+    </entity>
+    <entity name="ChildCategory1" representedClassName=".ChildCategory1" syncable="YES" codeGenerationType="class"/>
+    <entity name="Product1" representedClassName=".Product1" syncable="YES" codeGenerationType="class">
+        <attribute name="date_added" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="tax" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tax1"/>
+        <relationship name="variants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Variant1"/>
+    </entity>
+    <entity name="ProductList1" representedClassName=".ProductList1" syncable="YES" codeGenerationType="class">
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category1"/>
+        <relationship name="rankings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ranking1"/>
+    </entity>
+    <entity name="ProductRanking1" representedClassName=".ProductRanking1" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="view_count" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+    </entity>
+    <entity name="Ranking1" representedClassName=".Ranking1" syncable="YES" codeGenerationType="class">
+        <attribute name="ranking" optional="YES" attributeType="String"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductRanking1"/>
+    </entity>
+    <entity name="Tax1" representedClassName=".Tax1" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0"/>
+    </entity>
+    <entity name="Variant1" representedClassName=".Variant1" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+    </entity>
+    <elements>
+        <element name="Category1" positionX="-6129.31640625" positionY="-921.734375" width="128" height="103"/>
+        <element name="ChildCategory1" positionX="-5967.35546875" positionY="-790.5625" width="128" height="43"/>
+        <element name="Product1" positionX="-6307.1875" positionY="-919.22265625" width="128" height="118"/>
+        <element name="ProductList1" positionX="-5975.31640625" positionY="-1002.98046875" width="128" height="73"/>
+        <element name="ProductRanking1" positionX="-5793.50390625" positionY="-793.7421875" width="128" height="73"/>
+        <element name="Ranking1" positionX="-5830.86328125" positionY="-903.84375" width="128" height="73"/>
+        <element name="Tax1" positionX="-6413.12109375" positionY="-769.73828125" width="128" height="73"/>
+        <element name="Variant1" positionX="-6180.5390625" positionY="-766.21875" width="128" height="103"/>
+    </elements>
+</model>
